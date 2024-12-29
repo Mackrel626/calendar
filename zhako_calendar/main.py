@@ -11,13 +11,13 @@ class Widget(QMainWindow):
         self.ui.setupUi(self)
 
         self.media = QMediaPlayer(self)
-        self.media.setVideoOutput(self.ui.widget)
-        vid = QMediaContent(QUrl.fromLocalFile('Video\\7.avi'))
-        self.media.setMedia(vid)
-        self.media.play()
+        self.media.setVideoOutput(self.ui.widget)  # Встановлення області для відтворення відео.
+        vid = QMediaContent(QUrl.fromLocalFile('Video\\7.avi'))  # Завантаження відеофайлу.
+        self.media.setMedia(vid)  # Зв'язування відео з медіаплеєром.
+        self.media.play()  # Відтворення відео.
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = Widget()
-    ex.show()
-    sys.exit(app.exec_())
+    ex.show()  # Відображення головного вікна.
+    sys.exit(app.exec_())  # Запуск
